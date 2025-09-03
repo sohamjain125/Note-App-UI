@@ -130,14 +130,6 @@ const Dashboard: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Mobile Layout */}
       <div className="block md:hidden">
-        <div className="mobile-status-bar">
-          <span className="time">9:41</span>
-          <div className="icons">
-            <span>📶</span>
-            <span>🔋</span>
-          </div>
-        </div>
-        
         <div className="mobile-header">
           <div className="flex items-center space-x-3">
             <Logo width={40} height={16} />

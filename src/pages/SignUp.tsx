@@ -108,14 +108,6 @@ const SignUp: React.FC = () => {
             }}
           />
           <div className="relative z-10">
-          <div className="mobile-status-bar">
-            <span className="time">9:41</span>
-            <div className="icons">
-              <span>📶</span>
-              <span>🔋</span>
-            </div>
-          </div>
-          
           <div className="mobile-header">
             <div className="flex items-center space-x-3">
               <Logo width={40} height={16} />
@@ -155,6 +147,12 @@ const SignUp: React.FC = () => {
                     type="text"
                     placeholder="Enter 6-digit OTP"
                     className="input-field pr-10"
+                    autoComplete="one-time-code"
+                    autoCapitalize="none"
+                    autoCorrect="off"
+                    spellCheck="false"
+                    inputMode="numeric"
+                    maxLength="6"
                     {...registerOTP('otp', {
                       required: 'OTP is required',
                       pattern: {
@@ -313,16 +311,7 @@ const SignUp: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Mobile Layout */}
       <div className="block md:hidden relative">
-
         <div className="relative z-10">
-        <div className="mobile-status-bar">
-          <span className="time">9:41</span>
-          <div className="icons">
-            <span>📶</span>
-            <span>🔋</span>
-          </div>
-        </div>
-        
         <div className="mobile-header">
           <div className="flex items-center space-x-3">
             <Logo width={40} height={16} />
@@ -369,6 +358,11 @@ const SignUp: React.FC = () => {
                   type="email"
                   placeholder="jonas.kahnewald@gmail.com"
                   className="input-field pl-10"
+                  autoComplete="email"
+                  autoCapitalize="none"
+                  autoCorrect="off"
+                  spellCheck="false"
+                  inputMode="email"
                   {...registerSignUp('email', {
                     required: 'Email is required',
                     pattern: {
@@ -470,6 +464,11 @@ const SignUp: React.FC = () => {
                     type="email"
                     placeholder="jonas.kahnewald@gmail.com"
                     className="input-field pl-10"
+                    autoComplete="email"
+                    autoCapitalize="none"
+                    autoCorrect="off"
+                    spellCheck="false"
+                    inputMode="email"
                     {...registerSignUp('email', {
                       required: 'Email is required',
                       pattern: {

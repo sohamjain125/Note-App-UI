@@ -17,7 +17,7 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   onLoad
 }) => {
   const [hasError, setHasError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleImageLoad = () => {
     setIsLoading(false);
@@ -33,7 +33,7 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
 
   if (isLoading) {
     return (
-      <div className={`${className} bg-gray-200 animate-pulse flex items-center justify-center`}>
+      <div className={`${className} bg-gray-200 animate-pulse flex items-center justify-center min-h-[100px]`}>
         <div className="text-gray-500 text-sm">Loading...</div>
       </div>
     );
@@ -41,7 +41,7 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
 
   if (hasError) {
     return (
-      <div className={`${className} bg-gray-100 flex items-center justify-center`}>
+      <div className={`${className} bg-gray-100 flex items-center justify-center min-h-[100px]`}>
         <div className="text-gray-500 text-sm text-center">
           <div>Image failed to load</div>
           <div className="text-xs mt-1">{alt}</div>

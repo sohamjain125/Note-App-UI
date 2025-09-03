@@ -89,16 +89,7 @@ const SignIn: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Mobile Layout */}
       <div className="block md:hidden relative">
-
         <div className="relative z-10">
-        <div className="mobile-status-bar">
-          <span className="time">9:41</span>
-          <div className="icons">
-            <span>📶</span>
-            <span>🔋</span>
-          </div>
-        </div>
-        
         <div className="mobile-header">
           <div className="flex items-center space-x-3">
             <Logo width={40} height={16} />
@@ -121,6 +112,11 @@ const SignIn: React.FC = () => {
                    type="email"
                    placeholder="jonas.kahnewald@gmail.com"
                    className="input-field pl-10"
+                   autoComplete="email"
+                   autoCapitalize="none"
+                   autoCorrect="off"
+                   spellCheck="false"
+                   inputMode="email"
                    {...registerEmail('email', {
                      required: 'Email is required',
                      pattern: {
@@ -150,6 +146,12 @@ const SignIn: React.FC = () => {
                      type="text"
                      placeholder="Enter 6-digit OTP"
                      className="input-field pr-10"
+                     autoComplete="one-time-code"
+                     autoCapitalize="none"
+                     autoCorrect="off"
+                     spellCheck="false"
+                     inputMode="numeric"
+                     maxLength="6"
                      {...registerOTP('otp', {
                        required: 'OTP is required',
                        pattern: {
@@ -226,18 +228,23 @@ const SignIn: React.FC = () => {
                   Email
                 </label>
                 <div className="relative">
-                  <input
-                    type="email"
-                    placeholder="jonas.kahnewald@gmail.com"
-                    className="input-field pl-10"
-                                      {...registerEmail('email', {
-                    required: 'Email is required',
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: 'Invalid email address'
-                    }
-                  })}
-                />
+                                   <input
+                   type="email"
+                   placeholder="jonas.kahnewald@gmail.com"
+                   className="input-field pl-10"
+                   autoComplete="email"
+                   autoCapitalize="none"
+                   autoCorrect="off"
+                   spellCheck="false"
+                   inputMode="email"
+                   {...registerEmail('email', {
+                     required: 'Email is required',
+                     pattern: {
+                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                       message: 'Invalid email address'
+                     }
+                   })}
+                 />
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               </div>
               {emailErrors.email && (

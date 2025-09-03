@@ -28,6 +28,12 @@
   
   .input-field {
     @apply w-full px-3 py-2 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+    /* Mobile-specific improvements */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 16px; /* Prevents zoom on iOS */
+    line-height: 1.5;
   }
   
   .card {
@@ -101,18 +107,7 @@
   }
 }
 
-/* Mobile status bar simulation */
-.mobile-status-bar {
-  @apply flex items-center justify-between px-4 py-1 bg-black text-white text-xs;
-}
 
-.mobile-status-bar .time {
-  @apply font-medium;
-}
-
-.mobile-status-bar .icons {
-  @apply flex items-center space-x-1;
-}
 
 /* Wavy background pattern */
 .wavy-bg {
