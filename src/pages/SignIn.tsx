@@ -151,7 +151,7 @@ const SignIn: React.FC = () => {
                      autoCorrect="off"
                      spellCheck="false"
                      inputMode="numeric"
-                     maxLength="6"
+                     maxLength={6}
                      {...registerOTP('otp', {
                        required: 'OTP is required',
                        pattern: {
